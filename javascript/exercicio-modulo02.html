@@ -1,0 +1,79 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta http-equiv="X-UA-Compatible" content="ie=edge">
+  <title>Exercício JS-Rocketseat</title>
+</head>
+<body>
+  
+  <div id="container">
+    <button id='btnCriar'>Gerar novo quadrado</button>
+    <div id="app"></div> <!--Receberá os quadrados criados-->
+    <div id="ul"> <!--Receberá a Lista com Nomes e Input para Adicionar novo nome-->
+      <ul id="nomes"></ul>
+      <input type="text" name="nome" id="nome">
+      <button onClick="adicionar()">Adicionar</button>
+    </div>
+  </div>
+
+  <script>
+    //Criando novos quadrados
+    var botao = document.querySelector('#btnCriar'); // Referenciando o botão no js
+    var appDiv = document.querySelector('#app'); // Refereciando a Div que receberá os quadrados
+
+    botao.onclick = function () { // Chamando uma função ao clicar no botão js
+
+      var boxElement = document.createElement("div");  // Cria uma quadrado e referencia no js como boxElement
+      boxElement.style.width = '100px';
+      boxElement.style.height = '100px';
+      boxElement.style.margin = '10px';
+      boxElement.style.backgroundColor = '#f00';
+
+      boxElement.onmouseover = function () { // Chama uma função quando o mouse passar por cima do quadrado boxElement
+        boxElement.style.backgroundColor = getRandomColor(); // Seta a cor do background chamando uma função RandomColor
+      };
+
+      appDiv.appendChild(boxElement); // Aloca o quadrado na div escolhida para tal
+    };
+
+    function getRandomColor() { // Função para gerar uma cor randômica
+      var letters = "0123456789ABCDEF";
+      var color = "#";
+      for (var i = 0; i < 6; i++) {
+        color += letters[Math.floor(Math.random() * 16)];
+      }
+      return color;
+    }
+
+    // Parte dos nomes, input e botão para adicionar novos nomes
+    var names = ["Diego", "Gabriel", "Lucas"];
+
+    var elementoLista = document.querySelector("ul"); // Referencia a lista no js
+
+    var inputNewName = document.getElementById("nome"); // Referencia o input no js
+
+    for (name of names) { // Percorre cada nome no array de nomes
+      adicionaItem(name); // Chama a função adicionaItem passando cada nome
+    }
+
+    function adicionaItem(name) {
+      //pegando elemento li filho de ul
+      var elementoFilho = document.createElement("li");
+      //criando o texto para inserir no li
+      var textoDoFilho = document.createTextNode(name);
+      //inserindo texto ao elemento li
+      elementoFilho.appendChild(textoDoFilho);
+      //inserindo o li ao elemento ul
+      elementoLista.appendChild(elementoFilho);
+    }
+
+    function adicionar() {
+      adicionaItem(inputNewName.value);
+      inputNewName.value = "";
+    }
+    
+  </script>
+</body>
+</html>
