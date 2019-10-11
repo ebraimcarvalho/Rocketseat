@@ -1,11 +1,30 @@
-class Teste {
-  metodo() {
-
+class List {
+  constructor() {
+    this.data = []
   }
 
-  outro() {
-
+  add(data) {
+    this.data.push(data);
+    console.log(this.data);
   }
 }
 
-alert("Deu certo maguelo!")
+class TodoList extends List {
+  constructor() {
+    super();
+
+    this.usuario = 'Ebraim';
+  }
+
+  mostraUsuario() {
+    console.log(this.usuario);
+  }
+}
+
+const MinhaLista = new TodoList();
+
+document.getElementById('novotodo').onclick = function () {
+  MinhaLista.add('Novo todo');
+}
+
+MinhaLista.mostraUsuario();
