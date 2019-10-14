@@ -109,7 +109,7 @@ var filter = arr.filter(function (item) {
 });
 console.log(filter);
 var find = arr.find(function (item) {
-  return item === 3;
+  return item === 1;
 });
 console.log(find); //---------------------Arrow functions---------------------------------
 
@@ -132,4 +132,45 @@ var teste = function teste() {
 }; // 'Ebraim'; // 2; //[1,2,3];
 
 
-console.log(teste());
+console.log(teste()); //--------------------------Valores Padrão-------------------------------
+
+var soma = function soma() {
+  var a = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : 3;
+  var b = arguments.length > 1 && arguments[1] !== undefined ? arguments[1] : 6;
+  return a + b;
+};
+
+console.log(soma(1, 4));
+console.log(soma(1));
+console.log(soma()); //---------------------Desestruturação-----------------------------
+
+var usuario = {
+  nome: 'Ebraim',
+  idade: '28',
+  endereco: {
+    cidade: 'João Pessoa',
+    estado: 'PB'
+  }
+};
+/*
+const nome = usuario.nome;
+const idade = usuario.idade;
+const cidade = usuario.endereco.cidade;
+console.log(nome, idade, cidade);
+*/
+
+var nome = usuario.nome,
+    idade = usuario.idade,
+    cidade = usuario.endereco.cidade;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+function mostraNome(_ref) {
+  var nome = _ref.nome,
+      idade = _ref.idade,
+      cidade = _ref.endereco.cidade;
+  console.log(idade, cidade, nome);
+}
+
+mostraNome(usuario);

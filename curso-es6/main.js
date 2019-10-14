@@ -62,7 +62,7 @@ const filter = arr.filter(function(item) {
 console.log(filter);
 
 const find = arr.find(function(item) {
-  return item === 3;
+  return item === 1;
 });
 console.log(find);
 
@@ -80,3 +80,36 @@ console.log(newArr3);
 
 const teste = () => ({ nome: 'Ebraim' }); // 'Ebraim'; // 2; //[1,2,3];
 console.log(teste());
+
+//--------------------------Valores Padrão-------------------------------
+const soma = (a = 3, b = 6) => a + b;
+
+console.log(soma(1, 4));
+console.log(soma(1));
+console.log(soma());
+
+//---------------------Desestruturação-----------------------------
+const usuario = {
+  nome: 'Ebraim',
+  idade: '28',
+  endereco: {
+    cidade: 'João Pessoa',
+    estado: 'PB',
+  }
+}
+/*
+const nome = usuario.nome;
+const idade = usuario.idade;
+const cidade = usuario.endereco.cidade;
+console.log(nome, idade, cidade);
+*/
+
+const { nome, idade, endereco: { cidade } } = usuario;
+console.log(nome);
+console.log(idade);
+console.log(cidade);
+
+function mostraNome({ nome, idade, endereco: { cidade } }) {
+  console.log(idade, cidade, nome);
+}
+mostraNome(usuario);
