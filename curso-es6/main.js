@@ -113,3 +113,59 @@ function mostraNome({ nome, idade, endereco: { cidade } }) {
   console.log(idade, cidade, nome);
 }
 mostraNome(usuario);
+
+//---------------------REST---------------------------
+const usuario1 = {
+  nome1: 'Ebraim Carvalho',
+  idade: 23,
+  empresa: 'E-brain',
+};
+const { nome1, ...resto } = usuario1;
+console.log(nome1);
+console.log(resto);
+
+const arr3 = [1, 2, 3, 4];
+const [ a, b, ...c ] = arr3;
+console.log(a);
+console.log(b);
+console.log(c);
+
+function soma1(...params) {
+  return params.reduce((total, next) => total + next);
+}
+console.log(soma1(1,2,3,4,5));
+
+function rest(a, b, ...params1) {
+  return params1;
+}
+console.log(rest(1, 2, 3, 4, 5, 6));
+
+//---------------------SPREAD---------------------------
+const arr10 = [1, 2, 3];
+const arr11 = [4, 5, 6];
+const arr12 = [...arr10, ...arr11]
+console.log(arr12);
+
+const usuario10 = {
+  nome10: 'Ebraim',
+  idade10: 28,
+  empresa10: 'E-brain'
+};
+const usuario11 = { ...usuario10, nome10: 'Eu mesmo'};
+console.log(usuario11);
+
+//-------------------TEMPLATE LITERALS-----------------------
+const nomeTeste = 'Ebraim';
+const idadeTeste = 28;
+console.log('Meu nome é ' + nomeTeste + ' e tenho ' + idadeTeste + ' anos.')
+console.log(`Meu nome é ${nomeTeste} e tenho ${idadeTeste} anos.`)
+
+//-------------------OBJECT SHORT SYNTAX----------------------
+const nome15 = 'Ebraim';
+const idade15 = 28;
+const usuario15 = {
+  nome15,
+  idade15,
+  empresa15: 'E-brainn!',
+}
+console.log(usuario15);
