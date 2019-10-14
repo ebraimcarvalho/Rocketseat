@@ -18,6 +18,7 @@ function _defineProperties(target, props) { for (var i = 0; i < props.length; i+
 
 function _createClass(Constructor, protoProps, staticProps) { if (protoProps) _defineProperties(Constructor.prototype, protoProps); if (staticProps) _defineProperties(Constructor, staticProps); return Constructor; }
 
+//--------------------------Class, Constructor, Extends-----------------------
 var List =
 /*#__PURE__*/
 function () {
@@ -88,7 +89,8 @@ function () {
   return Matematica;
 }();
 
-console.log(Matematica.soma(1, 4));
+console.log(Matematica.soma(1, 4)); //------------------Map, Reduce, Filter, Find-------------------------//
+
 var arr = [1, 3, 4, 5, 8, 9];
 var newArr = arr.map(function (item) {
   return item * 2;
@@ -109,4 +111,25 @@ console.log(filter);
 var find = arr.find(function (item) {
   return item === 3;
 });
-console.log(find);
+console.log(find); //---------------------Arrow functions---------------------------------
+
+var arr2 = [1, 3, 4, 5, 8, 9];
+/*
+const newArr = arr.map(function(item) {
+  return item * 3;
+})
+*/
+
+var newArr3 = arr2.map(function (item) {
+  return item * 3;
+});
+console.log(newArr3);
+
+var teste = function teste() {
+  return {
+    nome: 'Ebraim'
+  };
+}; // 'Ebraim'; // 2; //[1,2,3];
+
+
+console.log(teste());

@@ -1,3 +1,4 @@
+//--------------------------Class, Constructor, Extends-----------------------
 class List {
   constructor() {
     this.data = []
@@ -37,6 +38,7 @@ class Matematica {
 
 console.log(Matematica.soma(1,4));
 
+//------------------Map, Reduce, Filter, Find-------------------------//
 const arr = [1, 3, 4, 5, 8, 9];
 
 const newArr = arr.map(function(item) {
@@ -63,3 +65,18 @@ const find = arr.find(function(item) {
   return item === 3;
 });
 console.log(find);
+
+//---------------------Arrow functions---------------------------------
+const arr2 = [1, 3, 4, 5, 8, 9];
+
+/*
+const newArr = arr.map(function(item) {
+  return item * 3;
+})
+*/
+
+const newArr3 = arr2.map((item) => item * 3);
+console.log(newArr3);
+
+const teste = () => ({ nome: 'Ebraim' }); // 'Ebraim'; // 2; //[1,2,3];
+console.log(teste());
