@@ -23,6 +23,24 @@
       uf: "SP"
     };
 
+    function exibeMensagem(endereco) {
+      return (
+        "O usuário mora em " +
+        endereco.cidade +
+        " / " +
+        endereco.uf +
+        ", no bairro " +
+        endereco.bairro +
+        ', na rua "' +
+        endereco.rua +
+        '" com nº ' +
+        endereco.numero +
+        "."
+      );
+    }
+
+    console.log(exibeMensagem(endereco));
+
     console.log(`O usuário mora em ${endereco.cidade}/${endereco.uf}, no bairro ${endereco.bairro}, na ${endereco.rua} com nº ${endereco.numero}.`)
     let { rua, numero, bairro, cidade, uf } = endereco;
     console.log(`O usuário mora em ${cidade} / ${uf}, no bairro ${bairro}, na rua "${rua}" com nº ${numero}.`);
@@ -54,6 +72,15 @@
     var skills = ["ReactJS", "React Native", "Javascript"];
     temHabilidade(skills, 'Javascript'); // true ou false
 
+    /*
+    function temHabilidade(skills, teste) {
+      return skills.indexOf("Javascript") !== -1;
+    }
+
+    var skills = ["Javascript", "ReactJS", "React Native"];
+    console.log(temHabilidade(skills, "Javascript"));
+    */
+
     /*---------------------------------------------------------------------------*/
     function experiencia(anos) {
      if (anos <= 1) {
@@ -74,6 +101,17 @@
     // De 7 acima: Jedi Master
 
     /*-----------------------------------------------------------------------------*/
+    function exibeHabilidades(usuarios) {
+      for (usuario of usuarios) {
+        console.log(
+          "O " +
+            usuario.nome +
+            " possui as habilidades: " +
+            usuario.habilidades.join(", ")
+        );
+      }
+    }
+
     var usuarios = [
       {
       nome: "Diego",
@@ -90,6 +128,8 @@
       //const nome = user.nome, habilidades = user.habilidades;
       console.log(`O ${user.nome} possui as habilidades: ${user.habilidades.join(", ")}`);
     }
+
+    exibeHabilidades(usuarios);
 
   </script>
 </body>
