@@ -5,4 +5,4 @@ const usuario = {
  idade,
  cidade: 'Rio do Sul',
 };
-console.log(usuario);
+console.log(usuario); // { nome: 'Diego', idade: 23, cidade: 'Rio do Sul' };

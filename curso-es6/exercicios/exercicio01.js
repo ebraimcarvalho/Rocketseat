@@ -21,3 +21,5 @@ const User1 = new Usuario('email@teste.com', 'senha123');
 const Adm1 = new Admin('email@teste.com', 'senha123');
 console.log(User1.isAdmin()) // false
 console.log(Adm1.isAdmin()) // true
+console.log(User1); // Usuario {email: "email@teste.com", senha: "senha123"}
+console.log(Adm1);// Admin {email: "email@teste.com", senha: "senha123", admin: true}
