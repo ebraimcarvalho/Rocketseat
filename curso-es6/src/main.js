@@ -10,4 +10,12 @@
 //console.log(soma(1, 3));
 //console.log(sub(4, 2));
 
-alert('Testando!')
+//import ClasseUsuario from './functions'; //está como default, posso chamar por qualquer nome
+//ClasseUsuario.info();
+
+//import { idade } from './functions'; //não está como default, precisa estar dentro de {}
+//console.log(idade);
+
+import Usuario, { idade as IdadeUsuario } from './functions';
+Usuario.info();
+console.log(IdadeUsuario);
